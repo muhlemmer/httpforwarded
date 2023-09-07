@@ -1,6 +1,8 @@
 # httpforwarded
 [![License](https://img.shields.io/badge/license-BSD--style_3--clause-brightgreen.svg?style=flat)](https://github.com/muhlemmer/httpforwarded/blob/master/LICENSE)
 [![Go Reference](https://pkg.go.dev/badge/github.com/muhlemmer/httpforwarded.svg)](https://pkg.go.dev/github.com/muhlemmer/httpforwarded)
+[![Go test](https://github.com/muhlemmer/httpforwarded/actions/workflows/go.yml/badge.svg)](https://github.com/muhlemmer/httpforwarded/actions/workflows/go.yml)
+[![codecov](https://codecov.io/gh/muhlemmer/httpforwarded/graph/badge.svg?token=E3G7W40GLU)](https://codecov.io/gh/muhlemmer/httpforwarded)
 
 The `httpforwarded` go package provides utility functions for working with the
 `Forwarded` HTTP header as defined in [RFC-7239](https://tools.ietf.org/html/rfc7239).
