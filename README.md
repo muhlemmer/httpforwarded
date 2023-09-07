@@ -29,6 +29,20 @@ go get -u github.com/muhlemmer/httpforwarded
 ```
 
 ## Usage
+
+Given a `*http.Request`:
+
+```Go
+// var req *http.Request
+
+params, _ := httpforwarded.ParseFromRequest(req)
+
+// you can then do something like this to get the first "for" param:
+fmt.Printf("origin %s", params["for"][0])
+```
+
+Given a list of `Forwarded` header values:
+
 ```Go
 // var req *http.Request
 
