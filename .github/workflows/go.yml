@@ -1,0 +1,31 @@
+name: Go
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        go: ['1.19', '1.20', '1.21']
+    name: Go ${{ matrix.go }} test
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: ${{ matrix.go }}
+
+    - name: Test
+      run: go test -race -v -coverprofile=profile.cov ./...
+    - uses: codecov/codecov-action@v3
+      with:
+        file: ./profile.cov
+        name: codecov-go
